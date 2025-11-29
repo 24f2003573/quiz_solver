@@ -58,7 +58,7 @@ Return JSON like:
 """
 
     resp = client.responses.create(
-        model="gpt-5-nano",
+        model="gpt-4.1-mini",
         input=[
             {"role": "system", "content": system_msg},
             {"role": "user", "content": user_msg},
@@ -254,7 +254,7 @@ Write ONLY Python code (no backticks, no comments) that:
 """
 
     resp = client.responses.create(
-        model="gpt-5-nano",
+        model="gpt-4.1-mini",
         input=[
             {"role": "system", "content": system_msg},
             {"role": "user", "content": user_msg},
