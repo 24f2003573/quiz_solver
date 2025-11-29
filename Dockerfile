@@ -1,10 +1,8 @@
-# Use official Playwright Python image with browsers preinstalled
-FROM mcr.microsoft.com/playwright/python:v1.56.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.49.0-jammy
 
-# Set workdir
 WORKDIR /app
 
-# Copy requirements and install Python deps
+# Install Python deps (do NOT install playwright again)
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
@@ -14,5 +12,4 @@ COPY . .
 # Render will set PORT; default to 8000 for local
 ENV PORT=8000
 
-# Start your Flask app
 CMD ["python", "main.py"]
